@@ -1,38 +1,68 @@
-# create-svelte
+<div align="center">
+  <h3 align="center">Rataiada</h3>
+</div>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## About
 
-## Creating a project
+A mobile web app for Mausritter's RPG character sheet.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Made with
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- [SvelteKit](https://kit.svelte.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [pwa](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
+- [Dexie.js](https://dexie.org/)
+- [pnpm](https://pnpm.io/)
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Contribuiting
 
-## Developing
+1. Clone the repository
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+   ```sh
+   git clone https://github.com/tucozz/project-rataiada.git
+   ```
 
-```bash
-npm run dev
+2. Head to the project directory
+
+   ```sh
+   cd project-rataiada/
+   ```
+
+3. Set up dependencies
+
+   ```sh
+   pnpm i
+   ```
+
+4. Spin up development server
+
+```sh
+pnpm dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm dev -- --open
+```
+
+### Testing
+
+The project also has unit testing, with vitest, and integration testing, with playwright.
+
+```sh
+pnpm test:integration
+
+pnpm test:unit
 ```
 
 ## Building
 
 To create a production version of your app:
 
-```bash
-npm run build
+```sh
+pnpm build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `pnpm preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## License
+
+Licensed under [Unlicense](./LICENSE).
