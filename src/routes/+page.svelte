@@ -3,6 +3,7 @@
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import { Button } from '$lib/components/ui/button';
 </script>
 
 <svelte:head>
@@ -29,6 +30,8 @@
 	<Attribute />
 
 	<Counter />
+
+	<Button>Test test shadcn-svelte</Button>
 </section>
 
 <style>
