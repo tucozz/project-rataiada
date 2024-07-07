@@ -15,10 +15,9 @@
 		"test:unit": "vitest"
 	},
 	"devDependencies": {
-		"@fontsource/fira-mono": "^4.5.10",
+		"@fontsource/pirata-one": "^5.0.13",
 		"@neoconfetti/svelte": "^1.0.0",
 		"@playwright/test": "^1.28.1",
-		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-static": "^3.0.2",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
@@ -32,6 +31,8 @@
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.35.1",
+		"flowbite": "^2.4.1",
+		"flowbite-svelte": "^0.46.13",
 		"postcss": "^8.4.39",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
@@ -47,6 +48,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@iconify/svelte": "^4.0.2",
+		"@popperjs/core": "^2.11.8",
 		"bits-ui": "^0.21.11",
 		"clsx": "^2.1.1",
 		"tailwind-merge": "^2.3.0",

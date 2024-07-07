@@ -12,8 +12,8 @@ export default defineConfig({
 			manifest: {
 				short_name: 'rataiada',
 				name: 'Rataiada',
-				start_url: '/',
-				scope: '/',
+				start_url: process.argv.includes('dev') ? '/' : process.env.BASE_PATH,
+				scope: process.argv.includes('dev') ? '/' : process.env.BASE_PATH,
 				display: 'standalone',
 				theme_color: "#ffffff",
 				background_color: "#ffffff"
