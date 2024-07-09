@@ -3,7 +3,7 @@
 </script>
 
 <style>
-    #main {
+    #header {
         display: flex;
         justify-content: space-between;
     }
@@ -19,9 +19,44 @@
         flex-direction: column;
         justify-content: space-between;
     }
+    #center {
+        display: flex;
+        justify-content: space-between;
+    }
+    #picture {
+        width: 50%;
+        height: 50%;
+        background-size: cover;
+        background-position: center;
+    }
+    #attributes {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #ASTR {
+        font-size: 2em;
+        display: flex;
+        justify-content: space-between;
+    }
+    #ADEX {
+        font-size: 2em;
+        display: flex;
+        justify-content: space-between;
+    }
+    #AWIL {
+        font-size: 2em;
+        display: flex;
+        justify-content: space-between;
+    }
+    #AHP {
+        font-size: 2em;
+        display: flex;
+        justify-content: space-between;
+    }
 </style>
 
-<div id="main">
+<div id="header">
     <!-- The main div containing the other two -->
     <!-- The two divs should be side by side -->
      <div id="firstq">
@@ -154,4 +189,55 @@
             </select>
         </div>
      </div>
+</div>
+<div id="center">
+    <div id="picture"
+        style="background-image: url('https://steamuserimages-a.akamaihd.net/ugc/1166943415406384626/9B8725438D29B400C1E9B7541E7338BD65E1C210/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false');">
+    </div>
+    <div id="attributes">
+        <div id=ASTR>
+            <div>
+                <label for="STR">STR</label>
+            </div>
+            <div>
+                <input type="number" id="STRMAX" name="STRMAX" min="0" max="19"/>
+            </div>
+            <div>
+                <input type="number" id="STRMAX" name="STRMAX" min="0" max="19"/>
+            </div>
+        </div>
+        <div id=ADEX>
+            <div>
+                <label for="DEX">DEX</label>
+            </div>
+            <div>
+                <input type="number" id="DEXMAX" name="DEXMAX" min="0" max="19"/>
+            </div>
+            <div>
+                <input type="number" id="DEXMAX" name="DEXMAX" min="0" max="19"/>
+            </div>
+        </div>
+        <div id=AWIL>
+            <div>
+                <label for="WIL">WIL</label>
+            </div>
+            <div>
+                <input type="number" id="WILMAX" name="WILMAX" min="0" max="19"/>
+            </div>
+            <div>
+                <input type="number" id="WILMAX" name="WILMAX" min="0" max="19"/>
+            </div>
+        </div>
+        <div id=AHP>
+            <div>
+                <label for="HP">HP</label>
+            </div>
+            <div>
+                <input type="number" id="HPMAX" name="HPMAX" min="0"/>
+            </div>
+            <div>
+                <input type="number" id="HPMAX" name="HPMAX" min="0"/>
+            </div>
+        </div>
+    </div>
 </div>
