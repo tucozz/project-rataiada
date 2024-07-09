@@ -1,7 +1,14 @@
 <script lang="ts">
-	import { Attribute } from '$lib/components/routes/characters/[id]/_pages/home/attribute';
+	import { CharacterIdentity } from '$lib/components/routes/characters/[id]/_pages/home/character-identity/index.js';
+	import type { Character } from '$lib/database';
+	import type { load } from './+page';
+
+	export let data: Awaited<ReturnType<typeof load>>;
+	export let character: Character;
 </script>
 
 <h1>Home</h1>
 
-<Attribute />
+<div>
+	<CharacterIdentity data={data.identityForm} {character} />
+</div>

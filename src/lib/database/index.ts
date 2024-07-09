@@ -1,3 +1,3 @@
-import { db } from './dexiejs';
+import { db, type Character } from './dexiejs';
 
-export { db };
+export { db, type Character };

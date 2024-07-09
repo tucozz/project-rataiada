@@ -33,9 +33,7 @@
 	>
 		<Icon
 			class="inline-block"
-			icon={!isMenuOnFocus
-				? 'fluent:caret-left-24-regular'
-				: 'fluent:caret-left-24-filled'}
+			icon={!isMenuOnFocus ? 'fluent:caret-left-24-regular' : 'fluent:caret-left-24-filled'}
 			width={iconsSize}
 			height={iconsSize}
 		/>
