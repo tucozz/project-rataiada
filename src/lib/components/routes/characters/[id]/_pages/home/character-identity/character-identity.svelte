@@ -19,7 +19,7 @@
 <div class="border rounded-md p-2 flex justify-between">
 	<div>
 		<h1 class="text-4xl">{character.identity_name}</h1>
-		<Separator class="mx-1 w-32" />
+		<Separator class="m-1 w-48" />
 		<p class="text-sm text-gray-600">{character.identity_background}</p>
 	</div>
 	<Drawer.Root>
