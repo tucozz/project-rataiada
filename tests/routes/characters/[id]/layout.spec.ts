@@ -9,9 +9,8 @@ test('layout after window scroll y positive expected bottom nav to be not visibl
 	page
 }) => {
 	await page.goto('/characters/1');
-    await page.getByRole('document')
-        .screenshot({ animations: 'disabled' }); // required just to disable animations
-    const bottomNav = page.locator('#bottom-nav');
+	await page.getByRole('document').screenshot({ animations: 'disabled' }); // required just to disable animations
+	const bottomNav = page.locator('#bottom-nav');
 
 	await page.mouse.wheel(0, 10);
 

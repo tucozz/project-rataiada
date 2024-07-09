@@ -1,7 +1,6 @@
 ---
 name: User story template
 about: This template provides a basic structure for user story issues.
-
 ---
 
 **As a [role],**
@@ -16,8 +15,7 @@ about: This template provides a basic structure for user story issues.
 - [ ] Criteria 3: Describe additional criteria as needed.
 
 ## Definition of Done:
+
 - [ ] All acceptance criteria are met.
 - [ ] Code is reviewed and approved.
 - [ ] Necessary tests are written and pass.
-- [ ] Documentation is updated, if applicable.
-- [ ] Feature is deployed to the [environment name].

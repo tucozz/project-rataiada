@@ -11,10 +11,11 @@
 				immediate: true,
 				onRegistered(r) {
 					// uncomment following code if you want check for updates
-					r && setInterval(() => {
-					   console.log('Checking for sw update')
-					   r.update()
-					}, 20000 /* 20s for testing purposes */)
+					r &&
+						setInterval(() => {
+							console.log('Checking for sw update');
+							r.update();
+						}, 20000 /* 20s for testing purposes */);
 					//console.log(`SW Registered: ${r}`);
 				},
 				onRegisterError(error) {
@@ -35,6 +36,7 @@
 		<link {...link} />
 	{/each}
 
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html webManifestLink}
 </svelte:head>
 
@@ -42,6 +44,6 @@
 	<slot />
 </div>
 
-{#await import('$lib/ReloadPrompt.svelte') then { default: ReloadPrompt}}
-  <ReloadPrompt />
+{#await import('$lib/ReloadPrompt.svelte') then { default: ReloadPrompt }}
+	<ReloadPrompt />
 {/await}

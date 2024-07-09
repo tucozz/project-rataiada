@@ -2,9 +2,9 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   test:
@@ -22,12 +22,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Run Svelte check
+        run: pnpm run check
+
       - name: Run unit tests
         run: pnpm run test:unit
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-        
+
       - name: Run integration tests
         run: pnpm run test:integration
       - uses: actions/upload-artifact@v4
