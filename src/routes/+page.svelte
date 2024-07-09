@@ -6,5 +6,5 @@
 <section>
 	<h1 class="text-4xl text-center">Welcome</h1>
 
-	<a href="characters/jdjd">Characters</a>
+	<a href="characters/Home">Characters</a>
 </section>
