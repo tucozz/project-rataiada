@@ -1,7 +1,20 @@
 <script lang="ts">
-	import { Attribute } from '$lib/components/routes/characters/[id]/_pages/home/attribute';
+	import { CharacterIdentity } from '$lib/components/routes/characters/[id]/_pages/home/character-identity';
+	import { Skeleton } from '$lib/components/ui/skeleton';
+	import type { Character } from '$lib/database';
+	import type { load } from './+page';
+
+	export let data: Awaited<ReturnType<typeof load>>;
+	export let character: Character;
 </script>
 
-<h1>Home</h1>
+<div class="flex flex-col gap-16">
+	<CharacterIdentity data={data.identityForm} {character} />
 
-<Attribute />
+	<!-- TODO: add portrait -->
+	<Skeleton class="h-96" />
+
+	<!-- TODO: add attributes -->
+
+	<!-- TODO: add grit -->
+</div>

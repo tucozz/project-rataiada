@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button as ButtonPrimitive } from 'bits-ui';
-	import { type Props, buttonVariants } from './index.js';
+	import { type Props, buttonVariants } from '.';
 	import { cn } from '$lib/utils.js';
 
 	type $$Props = Props;

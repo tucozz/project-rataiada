@@ -1,6 +1,4 @@
 import Dexie, { type EntityTable } from 'dexie';
-import 'dexie-observable';
-import 'dexie-syncable';
 
 interface Character {
 	id: string;
@@ -33,12 +31,7 @@ const db = new Dexie('RataiadaDatabase') as Dexie & {
 
 // Schema declaration:
 db.version(1).stores({
-	characters:
-		'$$id, identity_name, identity_background, identity_birthsign, identity_coat, identity_look, stats_level, stats_experience, stats_gritpoints, stats_strength_curr, stats_strength_max, stats_dexterity_curr, stats_dexterity_max, stats_willpower_curr, stats_willpower_max, stats_healthpoints_curr, stats_healthpoints_max, inventory_pips, bank_pips' // primary key "id" (for the runtime!)
+	characters: 'id'
 });
 
-// Add another version, just to trigger an upgrade for Dexie.Syncable
-db.version(2).stores({}); // No need to add / remove tables. This is just to allow the addon to install its tables.
-
-export type { Character };
-export { db };
+export { db, type Character };

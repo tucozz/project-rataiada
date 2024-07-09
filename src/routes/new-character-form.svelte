@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Input } from '$lib/components/ui/input/index.js';
-	import * as Form from '$lib/components/ui/form/index.js';
+	import { Input } from '$lib/components/ui/input';
+	import * as Form from '$lib/components/ui/form';
 	import NewCharacterFormStats from '$lib/components/routes/new-character-form-stats.svelte';
 	import {
 		superForm,
@@ -12,7 +12,7 @@
 	import { zod } from 'sveltekit-superforms/adapters';
 	import { _characterSchema } from './+page.js';
 	import { createEventDispatcher } from 'svelte';
-	import { db } from '$lib/database/index.js';
+	import { db } from '$lib/database';
 
 	export let dataForm: SuperValidated<Infer<typeof _characterSchema>>;
 	export const submitForm = () => {
@@ -34,7 +34,8 @@
 			}
 
 			db.characters
-				.add({
+				.put({
+					id: crypto.randomUUID(),
 					identity_name: form.data.identity_name,
 					identity_background: form.data.identity_background,
 					identity_birthsign: form.data.identity_birthsign,
@@ -59,6 +60,10 @@
 					dispatch('submited', {
 						characterId
 					});
+				})
+				.catch((error) => {
+					setError(form, error.message);
+					console.error(error);
 				});
 		}
 	});
