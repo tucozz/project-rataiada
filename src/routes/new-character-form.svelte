@@ -34,7 +34,8 @@
 			}
 
 			db.characters
-				.add({
+				.put({
+					id: crypto.randomUUID(),
 					identity_name: form.data.identity_name,
 					identity_background: form.data.identity_background,
 					identity_birthsign: form.data.identity_birthsign,
@@ -59,6 +60,10 @@
 					dispatch('submited', {
 						characterId
 					});
+				})
+				.catch((error) => {
+					setError(form, error.message);
+					console.error(error);
 				});
 		}
 	});

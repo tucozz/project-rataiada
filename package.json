@@ -53,8 +53,6 @@
 		"bits-ui": "^0.21.11",
 		"clsx": "^2.1.1",
 		"dexie": "^4.0.7",
-		"dexie-observable": "4.0.1-beta.13",
-		"dexie-syncable": "4.0.1-beta.13",
 		"formsnap": "^1.0.1",
 		"sveltekit-superforms": "^2.15.2",
 		"tailwind-merge": "^2.3.0",
