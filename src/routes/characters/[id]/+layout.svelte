@@ -6,7 +6,7 @@
 
 	import { BottomNav, BottomNavItem, Tooltip } from 'flowbite-svelte';
 
-	const iconsSize = '1.7rem';
+	const iconsSize = '2rem';
 
 	let isMenuOnFocus = false;
 
@@ -32,12 +32,14 @@
 		on:touchend={() => (isMenuOnFocus = false)}
 	>
 		<Icon
+			class="inline-block"
 			icon={!isMenuOnFocus
-				? 'fluent:layout-cell-four-24-regular'
-				: 'fluent:layout-cell-four-24-filled'}
+				? 'fluent:caret-left-24-regular'
+				: 'fluent:caret-left-24-filled'}
 			width={iconsSize}
 			height={iconsSize}
 		/>
+		<span class="text-gray-600 text-sm">Back</span>
 		<Tooltip arrow={false}>Leave</Tooltip>
 	</a>
 </header>

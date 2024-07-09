@@ -6,6 +6,8 @@
 	import { goto } from '$app/navigation';
 	import { type SuperValidated, type Infer } from 'sveltekit-superforms';
 	import { _characterSchema } from './+page.js';
+	import { liveQuery } from "dexie";
+	import { db } from '$lib/database/index.js';
 
 	import NewCharacterForm from './new-character-form.svelte';
 
@@ -16,6 +18,10 @@
 	const handleSubmited = (e: CustomEvent<{ characterId: string }>) => {
 		goto(`${base}/characters/${e.detail.characterId}`);
 	};
+
+	let characters = liveQuery(
+		() => db.characters.toArray()
+	);
 </script>
 
 <svelte:head>
@@ -25,6 +31,20 @@
 
 <section>
 	<h1 class="text-4xl my-4">Characters</h1>
+
+	<div>
+		<ul>
+			{#if $characters}
+				{#each $characters as character (character.id)}
+					<li>
+						<a href="characters/{character.id}">
+							{character.identity_name}, {character.stats_level}
+						</a>
+					</li>
+				{/each}
+			{/if}
+		</ul>
+	</div>
 
 	<Drawer.Root>
 		<Drawer.Trigger asChild let:builder>
