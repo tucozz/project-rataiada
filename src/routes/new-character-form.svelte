@@ -64,6 +64,15 @@
 	});
 
 	const { form: formData, enhance } = form;
+
+	$formData.stats_strength_curr = 0;
+	$formData.stats_strength_max = 0;
+	$formData.stats_dexterity_curr = 0;
+	$formData.stats_dexterity_max = 0;
+	$formData.stats_willpower_curr = 0;
+	$formData.stats_willpower_max = 0;
+	$formData.stats_healthpoints_curr = 0;
+	$formData.stats_healthpoints_max = 0;
 </script>
 
 <form method="POST" use:enhance>
