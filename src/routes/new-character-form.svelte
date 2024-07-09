@@ -111,7 +111,7 @@
 		<div>
 			<p>Strength</p>
 			<NewCharacterFormStats
-				form={form}
+				{form}
 				maxName="stats_strength_max"
 				bind:maxValue={$formData.stats_strength_max}
 				currName="stats_strength_curr"
@@ -121,7 +121,7 @@
 		<div>
 			<p>Dexterity</p>
 			<NewCharacterFormStats
-				form={form}
+				{form}
 				maxName="stats_dexterity_max"
 				bind:maxValue={$formData.stats_dexterity_max}
 				currName="stats_dexterity_curr"
@@ -131,7 +131,7 @@
 		<div>
 			<p>Willpower</p>
 			<NewCharacterFormStats
-				form={form}
+				{form}
 				maxName="stats_willpower_max"
 				bind:maxValue={$formData.stats_willpower_max}
 				currName="stats_willpower_curr"
@@ -141,7 +141,7 @@
 		<div>
 			<p>Health</p>
 			<NewCharacterFormStats
-				form={form}
+				{form}
 				maxName="stats_healthpoints_max"
 				bind:maxValue={$formData.stats_healthpoints_max}
 				currName="stats_healthpoints_curr"

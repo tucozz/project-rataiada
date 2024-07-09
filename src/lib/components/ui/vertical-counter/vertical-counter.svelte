@@ -1,13 +1,11 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from 'svelte/elements';
-	import type { InputEvents } from './index.js';
 	import Icon from '@iconify/svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
 	import { fly } from 'svelte/transition';
 
 	type $$Props = HTMLInputAttributes;
-	type $$Events = InputEvents;
 
 	export let value: $$Props['value'] = undefined;
 
@@ -35,7 +33,7 @@
 	<div class="relative h-12 min-w-8">
 		{#key value}
 			<div
-				class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-12 text-center "
+				class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-12 text-center"
 				in:fly={{ duration: 300, y: -transitionDistance * transitionDirection }}
 				out:fly={{ duration: 300, y: transitionDistance * transitionDirection }}
 			>

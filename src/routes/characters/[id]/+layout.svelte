@@ -28,8 +28,8 @@
 	<a
 		href="{base}/"
 		class="inline-block"
-		on:touchstart={(_) => (isMenuOnFocus = true)}
-		on:touchend={(_) => (isMenuOnFocus = false)}
+		on:touchstart={() => (isMenuOnFocus = true)}
+		on:touchend={() => (isMenuOnFocus = false)}
 	>
 		<Icon
 			icon={!isMenuOnFocus
@@ -53,7 +53,7 @@
 	outerClass="w-11/12 z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600
 		{!showNav && 'transform translate-y-24'} transition-transform duration-1000 ease-in-out"
 >
-	<BottomNavItem btnName="Home" appBtnPosition="left" on:click={(_) => currentPage.set(Page.Home)}>
+	<BottomNavItem btnName="Home" appBtnPosition="left" on:click={() => currentPage.set(Page.Home)}>
 		<Icon
 			icon={$currentPage == Page.Home ? 'fluent:home-28-filled' : 'fluent:home-28-regular'}
 			width={iconsSize}
@@ -64,7 +64,7 @@
 	<BottomNavItem
 		btnName="Inventory"
 		appBtnPosition="middle"
-		on:click={(_) => currentPage.set(Page.Inventory)}
+		on:click={() => currentPage.set(Page.Inventory)}
 	>
 		<Icon
 			icon={$currentPage == Page.Inventory
@@ -78,7 +78,7 @@
 	<BottomNavItem
 		btnName="Hirelings"
 		appBtnPosition="right"
-		on:click={(_) => currentPage.set(Page.Hirelings)}
+		on:click={() => currentPage.set(Page.Hirelings)}
 	>
 		<Icon
 			icon={$currentPage == Page.Hirelings

@@ -1,3 +1,3 @@
-import { db } from "./dexiejs";
+import { db } from './dexiejs';
 
 export { db };

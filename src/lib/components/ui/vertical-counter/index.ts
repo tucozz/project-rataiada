@@ -1,4 +1,4 @@
-import Root from "./vertical-counter.svelte";
+import Root from './vertical-counter.svelte';
 
 export type FormInputEvent<T extends Event = Event> = T & {
 	currentTarget: EventTarget & HTMLInputElement;
@@ -25,5 +25,5 @@ export type InputEvents = {
 export {
 	Root,
 	//
-	Root as VerticalCounter,
+	Root as VerticalCounter
 };

@@ -1,7 +1,7 @@
-import Root from "./stats-modifier.svelte";
+import Root from './stats-modifier.svelte';
 
 export {
 	Root,
 	//
-	Root as StatsModifier,
+	Root as StatsModifier
 };

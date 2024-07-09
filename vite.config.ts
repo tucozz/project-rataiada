@@ -7,7 +7,7 @@ export default defineConfig({
 		sveltekit(),
 		SvelteKitPWA({
 			pwaAssets: {
-				config: true,
+				config: true
 			},
 			manifest: {
 				short_name: 'rataiada',
@@ -15,9 +15,9 @@ export default defineConfig({
 				start_url: process.argv.includes('dev') ? '/' : process.env.BASE_PATH,
 				scope: process.argv.includes('dev') ? '/' : process.env.BASE_PATH,
 				display: 'standalone',
-				theme_color: "#ffffff",
-				background_color: "#ffffff"
-			},
+				theme_color: '#ffffff',
+				background_color: '#ffffff'
+			}
 		})
 	],
 	test: {

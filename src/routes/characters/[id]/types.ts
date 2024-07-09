@@ -1,5 +1,5 @@
 export enum Page {
-    Home,
-    Inventory,
-    Hirelings
-};
+	Home,
+	Inventory,
+	Hirelings
+}

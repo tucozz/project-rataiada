@@ -1,5 +1,5 @@
 <script>
-    let counter = 0;
+	let counter = 0;
 </script>
 
 <style>
