@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button/index.js';
-	import * as Drawer from '$lib/components/ui/drawer/index.js';
+	import { Button } from '$lib/components/ui/button';
+	import * as Drawer from '$lib/components/ui/drawer';
 	import Icon from '@iconify/svelte';
 	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { type SuperValidated, type Infer } from 'sveltekit-superforms';
 	import { _characterSchema } from './+page.js';
 	import { liveQuery } from 'dexie';
-	import { db } from '$lib/database/index.js';
+	import { db } from '$lib/database';
 
 	import NewCharacterForm from './new-character-form.svelte';
 

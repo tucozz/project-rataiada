@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Input } from '$lib/components/ui/input/index.js';
-	import * as Form from '$lib/components/ui/form/index.js';
+	import { Input } from '$lib/components/ui/input';
+	import * as Form from '$lib/components/ui/form';
 	import {
 		superForm,
 		setMessage,
@@ -10,7 +10,7 @@
 	} from 'sveltekit-superforms';
 	import { zod } from 'sveltekit-superforms/adapters';
 	import { _identitySchema } from './identity-schema.js';
-	import { db, type Character } from '$lib/database/index.js';
+	import { db, type Character } from '$lib/database';
 
 	export let dataForm: SuperValidated<Infer<typeof _identitySchema>>;
 	export let character: Character;
@@ -38,6 +38,10 @@
 				})
 				.then(() => {
 					setMessage(form, 'Character created!');
+				})
+				.catch((error) => {
+					setError(form, error.message);
+					console.error(error);
 				});
 		}
 	});

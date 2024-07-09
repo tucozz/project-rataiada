@@ -5,8 +5,9 @@
 	import { Page } from './types';
 	import { currentPage } from './stores';
 	import { load } from './+page.js';
-	import { type Character } from '$lib/database';
+	import { db, type Character } from '$lib/database';
 	import { page } from '$app/stores';
+	import { liveQuery } from 'dexie';
 
 	export let data: Awaited<ReturnType<typeof load>>;
 
@@ -18,15 +19,15 @@
 
 	$: pageComponent = pages[$currentPage];
 
-	const character: Character | undefined = undefined;
+	let character = liveQuery(() => db.characters.get($page.params.id));
 
-	const props = {
-		character: character as unknown as Character,
-		data
+	$: props = {
+		data,
+		character: $character as Character
 	};
 </script>
 
-{#if character}
+{#if $character}
 	{#key $currentPage}
 		<svelte:component this={pageComponent} {...props} />
 	{/key}
