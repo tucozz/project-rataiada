@@ -1,4 +1,4 @@
 <script lang="ts">
 </script>
 
-<h1>Inventory</h1>
+<h1 class="text-4xl">Inventory</h1>

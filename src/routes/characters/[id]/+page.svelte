@@ -14,8 +14,6 @@
 	$: pageComponent = pages[$currentPage];
 </script>
 
-<p>Current page: {$currentPage}</p>
-
 {#key $currentPage}
 	<svelte:component this={pageComponent} />
 {/key}

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { spring } from 'svelte/motion';
 	import Icon from '@iconify/svelte';
 	import { currentPage } from './stores';
 	import { Page } from './types';
