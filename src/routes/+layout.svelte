@@ -40,7 +40,7 @@
 	{@html webManifestLink}
 </svelte:head>
 
-<div class="m-8">
+<div class="m-8 pb-64">
 	<slot />
 </div>
 
