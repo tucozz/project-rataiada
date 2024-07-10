@@ -1,4 +1,5 @@
 import { _identitySchema } from '$lib/components/routes/characters/[id]/_pages/home/character-identity';
+import { _attributeSchema } from '$lib/components/rataiada/attributes-group';
 import { db } from '$lib/database';
 import { superValidate } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
@@ -11,8 +12,10 @@ export const load = async ({ params }) => {
 	if (!character) error(404, 'Character not found');
 
 	const identityForm = await superValidate(zod(_identitySchema));
+	const attributeForm = await superValidate(zod(_attributeSchema));
 
 	return {
-		identityForm
+		identityForm,
+		attributeForm
 	};
 };

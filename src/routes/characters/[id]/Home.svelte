@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AttributesGroup from '$lib/components/rataiada/attributes-group/attributes-group.svelte';
 	import { CharacterIdentity } from '$lib/components/routes/characters/[id]/_pages/home/character-identity';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import type { Character } from '$lib/database';
@@ -14,7 +15,7 @@
 	<!-- TODO: add portrait -->
 	<Skeleton class="h-96" />
 
-	<!-- TODO: add attributes -->
+	<AttributesGroup data={data.attributeForm} {character} />
 
 	<!-- TODO: add grit -->
 </div>
