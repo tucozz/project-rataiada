@@ -28,7 +28,7 @@
 				<div class="flex items-center justify-center border-r-2">
 					<span class="block my-auto text-xl">{character[max]}</span>
 				</div>
-				<div class="flex items-center justify-center ">
+				<div class="flex items-center justify-center">
 					<span class="block my-auto text-xl">{character[curr]}</span>
 				</div>
 			</div>
