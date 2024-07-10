@@ -10,9 +10,14 @@ A mobile web app for Mausritter's RPG character sheet.
 
 - [SvelteKit](https://kit.svelte.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [pwa](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
+- [shadcn-svelte](https://www.shadcn-svelte.com/)
+- [Flowbite Svelte](https://flowbite-svelte.com/)
+- [Iconify](https://iconify.design/)
 - [Dexie.js](https://dexie.org/)
+- [Vite](https://vitejs.dev/)
+- [Playwright](https://playwright.dev/)
 - [pnpm](https://pnpm.io/)
+- [pwa](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
 ## Contribuiting
 
