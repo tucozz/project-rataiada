@@ -4,6 +4,7 @@ import { db } from '$lib/database';
 import { superValidate } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
 import { error } from '@sveltejs/kit';
+import { _pipsSchema } from '$lib/components/routes/characters/[id]/_pages/inventory/pips/pips-schema';
 
 export const prerender = false;
 
@@ -13,9 +14,11 @@ export const load = async ({ params }) => {
 
 	const identityForm = await superValidate(zod(_identitySchema));
 	const attributeForm = await superValidate(zod(_attributeSchema));
+	const pipsForm = await superValidate(zod(_pipsSchema));
 
 	return {
 		identityForm,
-		attributeForm
+		attributeForm,
+		pipsForm
 	};
 };
