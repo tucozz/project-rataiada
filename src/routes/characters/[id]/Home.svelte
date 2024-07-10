@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AttributesGroup from '$lib/components/rataiada/attributes-group/attributes-group.svelte';
+	import AttributesGroup from '$lib/components/routes/characters/[id]/_pages/home/attributes-group/attributes-group.svelte';
 	import { CharacterIdentity } from '$lib/components/routes/characters/[id]/_pages/home/character-identity';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import type { Character } from '$lib/database';
