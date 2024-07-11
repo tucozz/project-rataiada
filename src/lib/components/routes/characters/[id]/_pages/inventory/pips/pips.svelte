@@ -15,11 +15,11 @@
 <Drawer.Root>
 	<Drawer.Trigger asChild let:builder>
 		<Button builders={[builder]} size="icon" variant="outline" class="border-0 w-full">
-			<div class="grid grid-cols-2 w-full h-full">
+			<div class="grid grid-cols-3 w-full h-full rounded border">
 				<div class="flex items-center justify-center bg-gray-200">
 					<span class="block my-auto font-bold text-2xl">pips</span>
 				</div>
-				<div class="flex items-center justify-center">
+				<div class="flex items-center justify-center col-span-2">
 					<span class="block my-auto text-xl">{character.inventory_pips}/250</span>
 				</div>
 			</div>

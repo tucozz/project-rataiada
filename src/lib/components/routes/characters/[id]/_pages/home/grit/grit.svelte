@@ -19,7 +19,7 @@
 				<div class="flex items-center justify-center bg-gray-200">
 					<span class="block my-auto font-bold text-2xl">grit</span>
 				</div>
-				<div class="flex items-center justify-center">
+				<div class="flex items-center justify-center col-span-2">
 					<span class="block my-auto text-xl">{character.stats_gritpoints}</span>
 				</div>
 			</div>
