@@ -8,14 +8,10 @@ export const _characterSchema = z.object({
 	identity_birthsign: z.string().min(2),
 	identity_coat: z.string().min(2),
 	identity_look: z.string().min(2),
-	stats_strength_curr: z.coerce.number().int().min(0).default(0),
-	stats_strength_max: z.coerce.number().int().min(0).default(0),
-	stats_dexterity_curr: z.coerce.number().int().min(0).default(0),
-	stats_dexterity_max: z.coerce.number().int().min(0).default(0),
-	stats_willpower_curr: z.coerce.number().int().min(0).default(0),
-	stats_willpower_max: z.coerce.number().int().min(0).default(0),
-	stats_healthpoints_curr: z.coerce.number().int().min(0).default(0),
-	stats_healthpoints_max: z.coerce.number().int().min(0).default(0),
+	stats_strength: z.coerce.number().int().min(0).default(0),
+	stats_dexterity: z.coerce.number().int().min(0).default(0),
+	stats_willpower: z.coerce.number().int().min(0).default(0),
+	stats_healthpoints: z.coerce.number().int().min(0).default(0),
 	inventory_pips: z.coerce.number().int().min(0).max(250).default(0)
 });
 

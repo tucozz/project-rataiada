@@ -44,14 +44,14 @@
 					stats_level: 1,
 					stats_experience: 0,
 					stats_gritpoints: 1,
-					stats_strength_curr: form.data.stats_strength_curr,
-					stats_strength_max: form.data.stats_strength_max,
-					stats_dexterity_curr: form.data.stats_dexterity_curr,
-					stats_dexterity_max: form.data.stats_dexterity_max,
-					stats_willpower_curr: form.data.stats_willpower_curr,
-					stats_willpower_max: form.data.stats_willpower_max,
-					stats_healthpoints_curr: form.data.stats_healthpoints_curr,
-					stats_healthpoints_max: form.data.stats_healthpoints_max,
+					stats_strength_curr: form.data.stats_strength,
+					stats_strength_max: form.data.stats_strength,
+					stats_dexterity_curr: form.data.stats_dexterity,
+					stats_dexterity_max: form.data.stats_dexterity,
+					stats_willpower_curr: form.data.stats_willpower,
+					stats_willpower_max: form.data.stats_willpower,
+					stats_healthpoints_curr: form.data.stats_healthpoints,
+					stats_healthpoints_max: form.data.stats_healthpoints,
 					inventory_pips: form.data.inventory_pips,
 					bank_pips: 0
 				})
@@ -70,14 +70,10 @@
 
 	const { form: formData, enhance } = form;
 
-	$formData.stats_strength_curr = 0;
-	$formData.stats_strength_max = 0;
-	$formData.stats_dexterity_curr = 0;
-	$formData.stats_dexterity_max = 0;
-	$formData.stats_willpower_curr = 0;
-	$formData.stats_willpower_max = 0;
-	$formData.stats_healthpoints_curr = 0;
-	$formData.stats_healthpoints_max = 0;
+	$formData.stats_strength = 0;
+	$formData.stats_dexterity = 0;
+	$formData.stats_willpower = 0;
+	$formData.stats_healthpoints = 0;
 </script>
 
 <form method="POST" use:enhance>
@@ -126,40 +122,32 @@
 			<p>Strength</p>
 			<NewCharacterFormStats
 				{form}
-				maxName="stats_strength_max"
-				bind:maxValue={$formData.stats_strength_max}
-				currName="stats_strength_curr"
-				bind:currValue={$formData.stats_strength_curr}
+				name="stats_strength"
+				bind:value={$formData.stats_strength}
 			/>
 		</div>
 		<div>
 			<p>Dexterity</p>
 			<NewCharacterFormStats
 				{form}
-				maxName="stats_dexterity_max"
-				bind:maxValue={$formData.stats_dexterity_max}
-				currName="stats_dexterity_curr"
-				bind:currValue={$formData.stats_dexterity_curr}
+				name="stats_dexterity"
+				bind:value={$formData.stats_dexterity}
 			/>
 		</div>
 		<div>
 			<p>Willpower</p>
 			<NewCharacterFormStats
 				{form}
-				maxName="stats_willpower_max"
-				bind:maxValue={$formData.stats_willpower_max}
-				currName="stats_willpower_curr"
-				bind:currValue={$formData.stats_willpower_curr}
+				name="stats_willpower"
+				bind:value={$formData.stats_willpower}
 			/>
 		</div>
 		<div>
 			<p>Health</p>
 			<NewCharacterFormStats
 				{form}
-				maxName="stats_healthpoints_max"
-				bind:maxValue={$formData.stats_healthpoints_max}
-				currName="stats_healthpoints_curr"
-				bind:currValue={$formData.stats_healthpoints_curr}
+				name="stats_healthpoints"
+				bind:value={$formData.stats_healthpoints}
 			/>
 		</div>
 	</div>
