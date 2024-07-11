@@ -12,11 +12,21 @@ export default defineConfig({
 			manifest: {
 				short_name: 'rataiada',
 				name: 'Rataiada',
+				description: "A Mausritter's RPG character sheet right in your browser.",
 				start_url: process.argv.includes('dev') ? '/' : process.env.BASE_PATH,
 				scope: process.argv.includes('dev') ? '/' : process.env.BASE_PATH,
 				display: 'standalone',
 				theme_color: '#ffffff',
-				background_color: '#ffffff'
+				background_color: '#ffffff',
+				screenshots: [
+					{
+						src: 'screenshots/screenshot-mobile.png',
+						sizes: '369x653',
+						type: 'image/png',
+						form_factor: 'narrow',
+						label: 'Root page'
+					}
+				]
 			}
 		})
 	],
