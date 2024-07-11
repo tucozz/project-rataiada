@@ -30,9 +30,19 @@
 				return;
 			}
 
+			const xp = form.data.current < 1000
+				? 1
+				: form.data.current < 3000
+					? 2
+					: form.data.current < 6000
+						? 3
+						: Math.floor(4 + (form.data.current - 6000) / 5000);
+
 			db.characters
 				.update(character.id, {
-					stats_experience: form.data.current
+
+					stats_experience: form.data.current,
+					stats_level: xp
 				})
 				.then(() => {
 					setMessage(form, 'XP updated!');

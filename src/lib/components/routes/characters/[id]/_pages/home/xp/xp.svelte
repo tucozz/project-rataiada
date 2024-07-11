@@ -23,16 +23,7 @@
                     <span class="block my-auto text-xl">{character.stats_experience}</span>
 				</div>
                 <div class="flex items-center justify-center bg-gray-200">
-                    {#if character.stats_experience < 1000}
-                        <span class="block my-auto font-bold text-2xl">LVL: 1</span>
-                    {:else if character.stats_experience < 3000}
-                        <span class="block my-auto font-bold text-2xl">LVL: 2</span>
-                    {:else if character.stats_experience < 6000}
-                        <span class="block my-auto font-bold text-2xl">LVL: 3</span>
-                    {:else}
-                    <!-- Round the level down to the nearest whole value -->
-                        <span class="block my-auto font-bold text-2xl">LVL: {(4 + (character.stats_experience - 6000) / 5000).toFixed(0)}</span>
-                    {/if}
+					<span class="block my-auto font-bold text-2xl">LVL: {character.stats_level}</span>
                 </div>
 			</div>
 		</Button>
