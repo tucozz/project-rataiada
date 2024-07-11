@@ -6,6 +6,7 @@ import { zod } from 'sveltekit-superforms/adapters';
 import { error } from '@sveltejs/kit';
 import { _pipsSchema } from '$lib/components/routes/characters/[id]/_pages/inventory/pips/pips-schema';
 import { _gritSchema } from '$lib/components/routes/characters/[id]/_pages/home/grit';
+import { _xpSchema } from '$lib/components/routes/characters/[id]/_pages/home/xp';
 
 export const prerender = false;
 
@@ -17,11 +18,13 @@ export const load = async ({ params }) => {
 	const attributeForm = await superValidate(zod(_attributeSchema));
 	const pipsForm = await superValidate(zod(_pipsSchema));
 	const gritForm = await superValidate(zod(_gritSchema));
-
+	const xpForm = await superValidate(zod(_xpSchema));
+	
 	return {
 		identityForm,
 		attributeForm,
 		pipsForm,
 		gritForm,
+		xpForm
 	};
 };
