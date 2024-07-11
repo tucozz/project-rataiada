@@ -15,13 +15,25 @@
 <Drawer.Root>
 	<Drawer.Trigger asChild let:builder>
 		<Button builders={[builder]} size="icon" variant="outline" class="border-0 w-full">
-			<div class="grid grid-cols-2 w-full h-full">
-				<div class="flex items-center justify-center bg-gray-200">
-					<span class="block my-auto font-bold text-2xl">EXP</span>
+			<div class="grid grid-cols-3 w-full h-full rounded border">
+                <div class="flex items-center justify-center bg-gray-200">
+                    <span class="block my-auto font-bold text-2xl">EXP</span>
 				</div>
 				<div class="flex items-center justify-center">
-					<span class="block my-auto text-xl">{character.stats_experience}</span>
+                    <span class="block my-auto text-xl">{character.stats_experience}</span>
 				</div>
+                <div class="flex items-center justify-center bg-gray-200">
+                    {#if character.stats_experience < 1000}
+                        <span class="block my-auto font-bold text-2xl">LVL: 1</span>
+                    {:else if character.stats_experience < 3000}
+                        <span class="block my-auto font-bold text-2xl">LVL: 2</span>
+                    {:else if character.stats_experience < 6000}
+                        <span class="block my-auto font-bold text-2xl">LVL: 3</span>
+                    {:else}
+                    <!-- Round the level down to the nearest whole value -->
+                        <span class="block my-auto font-bold text-2xl">LVL: {(4 + (character.stats_experience - 6000) / 5000).toFixed(0)}</span>
+                    {/if}
+                </div>
 			</div>
 		</Button>
 	</Drawer.Trigger>
