@@ -73,7 +73,7 @@
 		on:click={handleRemove}
 	>
 		<div class="flex justify-center items-center">
-			<Icon icon="fluent:building-bank-28-regular" width="1.7rem" height="1.7rem" />
+			<Icon icon="fluent:delete-28-regular" width="1.7rem" height="1.7rem" />
 		</div>
 		<span class="flex-1">Delete {character.identity_name}</span>
 	</Button>
