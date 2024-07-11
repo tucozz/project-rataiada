@@ -22,16 +22,28 @@ interface Character {
 	bank_pips: number;
 }
 
+interface TextItem {
+	id: string;
+	character_id: string;
+	place: 'inventory_main_body' | 'inventory_pack' | 'bank' | 'grit';
+	content: string;
+}
+
 const db = new Dexie('RataiadaDatabase') as Dexie & {
 	characters: EntityTable<
 		Character,
+		'id' // primary key "id" (for the typings only)
+	>;
+	textItems: EntityTable<
+		TextItem,
 		'id' // primary key "id" (for the typings only)
 	>;
 };
 
 // Schema declaration:
 db.version(1).stores({
-	characters: 'id'
+	characters: 'id',
+	textItems: 'id, character_id, place'
 });
 
-export { db, type Character };
+export { db, type Character, type TextItem };
