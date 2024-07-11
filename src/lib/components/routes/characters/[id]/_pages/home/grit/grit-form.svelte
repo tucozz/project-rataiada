@@ -8,12 +8,12 @@
 		type Infer
 	} from 'sveltekit-superforms';
 	import { zod } from 'sveltekit-superforms/adapters';
-	import { _pipsSchema } from './pips-schema';
+	import { _gritSchema } from './grit-schema';
 	import { db, type Character } from '$lib/database';
 	import { Input } from 'flowbite-svelte';
 	import { createEventDispatcher } from 'svelte';
 
-	export let dataForm: SuperValidated<Infer<typeof _pipsSchema>>;
+	export let dataForm: SuperValidated<Infer<typeof _gritSchema>>;
 	export let character: Character;
 
 	export const submitForm = () => {
@@ -23,19 +23,19 @@
 	const form = superForm(dataForm, {
 		dataType: 'json',
 		SPA: true,
-		validators: zod(_pipsSchema),
+		validators: zod(_gritSchema),
 		onUpdate: async ({ form }) => {
 			if (!form.valid) {
-				setError(form, 'Invalid pips. Please choose a number between 0 and 250.');
+				setError(form, 'Invalid grit. Please check again.');
 				return;
 			}
 
 			db.characters
 				.update(character.id, {
-					inventory_pips: form.data.current
+					stats_gritpoints: form.data.current
 				})
 				.then(() => {
-					setMessage(form, 'Pips updated!');
+					setMessage(form, 'Grit updated!');
 				})
 				.catch((error) => {
 					setError(form, error.message);
@@ -46,17 +46,17 @@
 
 	const { form: formData, enhance } = form;
 
-	$formData.current = character.inventory_pips;
+	$formData.current = character.stats_gritpoints;
 </script>
 
 <form method="POST" use:enhance>
 	<div class="flex items-center justify-center space-x-8">
 		<Form.Field {form} name="current">
 			<Form.Control let:attrs>
-				<Form.Label>Pips</Form.Label>
+				<Form.Label>Grit</Form.Label>
 				<Input {...attrs} type="number" bind:value={$formData.current} placeholder="0" />
 			</Form.Control>
-			<Form.Description>This is your character's current pips.</Form.Description>
+			<Form.Description>This is your character's current grit.</Form.Description>
 			<Form.FieldErrors />
 		</Form.Field>
 	</div>
