@@ -23,8 +23,7 @@
 
 	<AttributesGroup data={data.attributeForm} {character} />
 
-	<Grit data={data.gritForm} {character} />
-
 	<XP data={data.xpForm} {character} />
 
+	<Grit data={data.gritForm} {character} />
 </div>
