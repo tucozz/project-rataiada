@@ -53,7 +53,11 @@
 					stats_healthpoints_curr: form.data.stats_healthpoints_curr,
 					stats_healthpoints_max: form.data.stats_healthpoints_max,
 					inventory_pips: form.data.inventory_pips,
-					bank_pips: 0
+					bank_pips: 0,
+					inventory_items_main_body: [],
+					inventory_items_pack: [],
+					bank_items: [],
+					grit_ignored_conditions_items: []
 				})
 				.then((characterId) => {
 					setMessage(form, 'Character created!');

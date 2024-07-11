@@ -1,3 +1,10 @@
-import { db, type Character } from './dexiejs';
+import { db } from './dexiejs';
+import { type Character, type Item, type CharacterItem } from './schemas';
 
-export { db, type Character };
+export {
+	db,
+	//
+	type Character,
+	type Item,
+	type CharacterItem
+};

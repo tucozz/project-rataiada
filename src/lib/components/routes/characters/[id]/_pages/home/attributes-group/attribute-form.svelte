@@ -37,10 +37,13 @@
 			}
 
 			db.characters
-				.update(character.id, {
-					[max]: form.data.max,
-					[curr]: form.data.current
-				})
+				.update(
+					character.id,
+					{
+						[max]: form.data.max,
+						[curr]: form.data.current
+					} as unknown as Partial<Character> /* avoids crazy noonsense type error introduced after including an Array (inventory_items) to Character schema TYPEERR-001 */
+				)
 				.then(() => {
 					setMessage(form, 'Attribute updated!');
 				})

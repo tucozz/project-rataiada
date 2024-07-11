@@ -5,7 +5,9 @@
 	import { Input } from '$lib/components/ui/input';
 	import { fly } from 'svelte/transition';
 
-	type $$Props = HTMLInputAttributes;
+	type $$Props = HTMLInputAttributes & { maxDisabeled?: number };
+
+	export let maxDisabeled: number | undefined = undefined;
 
 	export let value: $$Props['value'] = undefined;
 
@@ -26,6 +28,7 @@
 		size="icon"
 		class="h-8 w-8 shrink-0 rounded-full"
 		on:click={() => handleClick(1)}
+		disabled={maxDisabeled !== undefined && value >= maxDisabeled}
 	>
 		<Icon icon="fluent:add-28-filled" width={iconSize} height={iconSize} />
 		<span class="sr-only">Increase</span>

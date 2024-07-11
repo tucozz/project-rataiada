@@ -1,37 +1,21 @@
 import Dexie, { type EntityTable } from 'dexie';
-
-interface Character {
-	id: string;
-	identity_name: string;
-	identity_background: string;
-	identity_birthsign: string;
-	identity_coat: string;
-	identity_look: string;
-	stats_level: number;
-	stats_experience: number;
-	stats_gritpoints: number;
-	stats_strength_curr: number;
-	stats_strength_max: number;
-	stats_dexterity_curr: number;
-	stats_dexterity_max: number;
-	stats_willpower_curr: number;
-	stats_willpower_max: number;
-	stats_healthpoints_curr: number;
-	stats_healthpoints_max: number;
-	inventory_pips: number;
-	bank_pips: number;
-}
+import type { Character, CharacterItem, Item } from './schemas';
 
 const db = new Dexie('RataiadaDatabase') as Dexie & {
 	characters: EntityTable<
 		Character,
 		'id' // primary key "id" (for the typings only)
 	>;
+	items: EntityTable<Item, 'id'>;
+	characterItems: EntityTable<CharacterItem, 'id'>;
 };
 
 // Schema declaration:
 db.version(1).stores({
-	characters: 'id'
+	characters:
+		'id,*inventory_items_main_body,*inventory_items_pack,*bank_items,*grit_ignored_conditions_items',
+	items: 'id',
+	characterItems: 'id,characterId'
 });
 
-export { db, type Character };
+export { db };
