@@ -2,6 +2,8 @@
 	import AttributesGroup from '$lib/components/routes/characters/[id]/_pages/home/attributes-group/attributes-group.svelte';
 	import { CharacterIdentity } from '$lib/components/routes/characters/[id]/_pages/home/character-identity';
 	import { Grit } from '$lib/components/routes/characters/[id]/_pages/home/grit';
+	import { XP } from '$lib/components/routes/characters/[id]/_pages/home/xp';
+	import { Skeleton } from '$lib/components/ui/skeleton';
 	import type { Character } from '$lib/database';
 	import type { load } from './+page';
 	import CharacterPortraitPlaceholder from '$lib/images/placeholders/character-portrait.png';
@@ -22,4 +24,7 @@
 	<AttributesGroup data={data.attributeForm} {character} />
 
 	<Grit data={data.gritForm} {character} />
+
+	<XP data={data.xpForm} {character} />
+
 </div>
