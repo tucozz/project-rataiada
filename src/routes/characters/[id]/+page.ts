@@ -19,7 +19,7 @@ export const load = async ({ params }) => {
 	const pipsForm = await superValidate(zod(_pipsSchema));
 	const gritForm = await superValidate(zod(_gritSchema));
 	const xpForm = await superValidate(zod(_xpSchema));
-	
+
 	return {
 		identityForm,
 		attributeForm,

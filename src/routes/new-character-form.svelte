@@ -120,27 +120,15 @@
 	<div>
 		<div>
 			<p>Strength</p>
-			<NewCharacterFormStats
-				{form}
-				name="stats_strength"
-				bind:value={$formData.stats_strength}
-			/>
+			<NewCharacterFormStats {form} name="stats_strength" bind:value={$formData.stats_strength} />
 		</div>
 		<div>
 			<p>Dexterity</p>
-			<NewCharacterFormStats
-				{form}
-				name="stats_dexterity"
-				bind:value={$formData.stats_dexterity}
-			/>
+			<NewCharacterFormStats {form} name="stats_dexterity" bind:value={$formData.stats_dexterity} />
 		</div>
 		<div>
 			<p>Willpower</p>
-			<NewCharacterFormStats
-				{form}
-				name="stats_willpower"
-				bind:value={$formData.stats_willpower}
-			/>
+			<NewCharacterFormStats {form} name="stats_willpower" bind:value={$formData.stats_willpower} />
 		</div>
 		<div>
 			<p>Health</p>

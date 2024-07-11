@@ -14,7 +14,7 @@
 	<Form.Field {form} {name}>
 		<Form.Control let:attrs>
 			<Form.Label>Max</Form.Label>
-			<VerticalCounter {...attrs} bind:value={value} placeholder="0" />
+			<VerticalCounter {...attrs} bind:value placeholder="0" />
 		</Form.Control>
 		<Form.FieldErrors />
 	</Form.Field>

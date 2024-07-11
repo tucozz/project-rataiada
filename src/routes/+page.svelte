@@ -10,6 +10,7 @@
 	import { db } from '$lib/database';
 
 	import NewCharacterForm from './new-character-form.svelte';
+	import CharacterList from '$lib/components/rataiada/character-list/character-list.svelte';
 
 	export let data: SuperValidated<Infer<typeof _characterSchema>>;
 
@@ -30,19 +31,11 @@
 <section>
 	<h1 class="text-4xl my-4">Characters</h1>
 
-	<div>
-		<ul>
-			{#if $characters}
-				{#each $characters as character (character.id)}
-					<li>
-						<a href="characters/{character.id}">
-							{character.identity_name}, {character.stats_level}
-						</a>
-					</li>
-				{/each}
-			{/if}
-		</ul>
-	</div>
+	{#if $characters && $characters.length > 0}
+		<CharacterList characters={$characters} />
+	{:else}
+		<p class="text-xl text-gray-500 text-center mx-auto my-16">no characters yet...</p>
+	{/if}
 
 	<Drawer.Root>
 		<Drawer.Trigger asChild let:builder>

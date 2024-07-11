@@ -1,5 +1,3 @@
 import Root from './items.svelte';
 
-export {
-    Root as Items
-};
+export { Root as Items };

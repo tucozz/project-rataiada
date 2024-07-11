@@ -12,7 +12,11 @@
 <section>
 	{#if $items}
 		<div>
-			<ItemBoard {character} items={$items.filter(item => item.place == "inventory_main_body")} place="inventory_main_body" />
+			<ItemBoard
+				{character}
+				items={$items.filter((item) => item.place == 'inventory_main_body')}
+				place="inventory_main_body"
+			/>
 			<div class="grid grid-cols-2 mt-4">
 				<span>
 					<b>Carrided:</b> Ready to use.
@@ -24,7 +28,11 @@
 		</div>
 		<Separator class="my-2" />
 		<div>
-			<ItemBoard {character} items={$items.filter(item => item.place == "inventory_pack")} place="inventory_pack" />
+			<ItemBoard
+				{character}
+				items={$items.filter((item) => item.place == 'inventory_pack')}
+				place="inventory_pack"
+			/>
 			<div class="mt-4">
 				<span>
 					<b>Pack:</b> Takes time to ready. During combat, requires an action to retrieve.

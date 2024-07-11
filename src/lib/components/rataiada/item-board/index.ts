@@ -1,5 +1,3 @@
 import Root from './item-board.svelte';
 
-export {
-    Root as ItemBoard
-};
+export { Root as ItemBoard };

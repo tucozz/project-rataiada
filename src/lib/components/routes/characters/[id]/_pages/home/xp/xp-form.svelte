@@ -11,7 +11,6 @@
 	import { _xpSchema } from './xp-schema';
 	import { db, type Character } from '$lib/database';
 	import { Input } from 'flowbite-svelte';
-	import { createEventDispatcher } from 'svelte';
 
 	export let dataForm: SuperValidated<Infer<typeof _xpSchema>>;
 	export let character: Character;
@@ -30,17 +29,17 @@
 				return;
 			}
 
-			const xp = form.data.current < 1000
-				? 1
-				: form.data.current < 3000
-					? 2
-					: form.data.current < 6000
-						? 3
-						: Math.floor(4 + (form.data.current - 6000) / 5000);
+			const xp =
+				form.data.current < 1000
+					? 1
+					: form.data.current < 3000
+						? 2
+						: form.data.current < 6000
+							? 3
+							: Math.floor(4 + (form.data.current - 6000) / 5000);
 
 			db.characters
 				.update(character.id, {
-
 					stats_experience: form.data.current,
 					stats_level: xp
 				})

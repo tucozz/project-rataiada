@@ -11,7 +11,6 @@
 	import { _gritSchema } from './grit-schema';
 	import { db, type Character } from '$lib/database';
 	import { Input } from 'flowbite-svelte';
-	import { createEventDispatcher } from 'svelte';
 
 	export let dataForm: SuperValidated<Infer<typeof _gritSchema>>;
 	export let character: Character;

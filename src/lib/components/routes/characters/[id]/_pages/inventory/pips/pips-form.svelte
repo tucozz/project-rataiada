@@ -11,7 +11,6 @@
 	import { _pipsSchema } from './pips-schema';
 	import { db, type Character } from '$lib/database';
 	import { Input } from 'flowbite-svelte';
-	import { createEventDispatcher } from 'svelte';
 
 	export let dataForm: SuperValidated<Infer<typeof _pipsSchema>>;
 	export let character: Character;

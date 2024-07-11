@@ -6,14 +6,12 @@
 
 	export let data: Awaited<ReturnType<typeof load>>;
 	export let character: Character;
-
-
 </script>
 
 <div class="flex flex-col gap-16">
 	<h1 class="text-4xl">Inventory</h1>
-	
+
 	<Items {character} />
-	
+
 	<Pips data={data.pipsForm} {character} />
 </div>

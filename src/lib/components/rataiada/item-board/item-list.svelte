@@ -4,7 +4,7 @@
 
 	export let items: TextItem[];
 
-    let timer: NodeJS.Timeout;
+	let timer: ReturnType<typeof setTimeout>;
 	const debounce = (itemId: string, content: string) => {
 		clearTimeout(timer);
 		timer = setTimeout(() => {
@@ -12,18 +12,27 @@
 		}, 750);
 	};
 
-    const handleRemove = (id: string) => {
-        db.textItems.delete(id);
-    };
+	const handleRemove = (id: string) => {
+		db.textItems.delete(id);
+	};
 </script>
 
 <ul>
 	{#each items as item (item.id)}
-		<li class="shadow w-[96%] mx-auto">
+		<li class="shadow w-[96%] mx-auto my-2">
 			<label>
-				<input class="border-0" type="text" on:keyup={(e) => debounce(item.id, e.currentTarget.value)} value={item.content} />
+				<input
+					class="border-0"
+					type="text"
+					on:keyup={(e) => debounce(item.id, e.currentTarget.value)}
+					value={item.content}
+				/>
 
-				<button class="w-12 flex justify-center items-center" on:click={() => handleRemove(item.id)} aria-label="Remove">
+				<button
+					class="w-12 flex justify-center items-center"
+					on:click={() => handleRemove(item.id)}
+					aria-label="Remove"
+				>
 					<Icon icon="fluent:delete-28-regular" width="1.2rem" height="1.2rem" />
 				</button>
 			</label>
