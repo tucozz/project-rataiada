@@ -15,6 +15,7 @@
 	import { goto } from '$app/navigation';
 	import Icon from '@iconify/svelte';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
+	import { base } from '$app/paths';
 
 	export let dataForm: SuperValidated<Infer<typeof _identitySchema>>;
 	export let character: Character;
@@ -60,7 +61,7 @@
 
 	const handleRemove = () => {
 		db.characters.delete(character.id);
-		goto('/');
+		goto(`${base}/`);
 	};
 </script>
 
