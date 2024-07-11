@@ -52,16 +52,12 @@
 			</div>
 		</Drawer.Content>
 	</Drawer.Root>
-	
+
 	<div class="mt-8">
 		<h2>Ignored conditions</h2>
 		<div class="border rounded border-dashed border-b-0 pb-16">
 			{#if $gritItems}
-				<ItemBoard
-					{character}
-					items={$gritItems}
-					place="grit"
-				/>
+				<ItemBoard {character} items={$gritItems} place="grit" />
 			{/if}
 		</div>
 	</div>

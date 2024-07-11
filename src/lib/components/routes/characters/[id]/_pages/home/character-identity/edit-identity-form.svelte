@@ -11,6 +11,10 @@
 	import { zod } from 'sveltekit-superforms/adapters';
 	import { _identitySchema } from './identity-schema.js';
 	import { db, type Character } from '$lib/database';
+	import { Button } from '$lib/components/ui/button';
+	import { goto } from '$app/navigation';
+	import Icon from '@iconify/svelte';
+	import Separator from '$lib/components/ui/separator/separator.svelte';
 
 	export let dataForm: SuperValidated<Infer<typeof _identitySchema>>;
 	export let character: Character;
@@ -53,9 +57,27 @@
 	$formData.identity_birthsign = character.identity_birthsign;
 	$formData.identity_coat = character.identity_coat;
 	$formData.identity_look = character.identity_look;
+
+	const handleRemove = () => {
+		db.characters.delete(character.id);
+		goto('/');
+	};
 </script>
 
 <form method="POST" use:enhance>
+	<Button
+		type="button"
+		variant="destructive"
+		aria-label="Remove"
+		class="w-full"
+		on:click={handleRemove}
+	>
+		<div class="flex justify-center items-center">
+			<Icon icon="fluent:building-bank-28-regular" width="1.7rem" height="1.7rem" />
+		</div>
+		<span class="flex-1">Delete {character.identity_name}</span>
+	</Button>
+	<Separator class="my-8" />
 	<Form.Field {form} name="identity_name">
 		<Form.Control let:attrs>
 			<Form.Label>Name</Form.Label>
