@@ -20,15 +20,16 @@
 	};
 </script>
 
-<div class="flex flex-col items-center justify-center space-x-2">
+<div class="flex items-center justify-center space-x-2">
 	<Button
 		variant="outline"
 		size="icon"
 		class="h-8 w-8 shrink-0 rounded-full"
-		on:click={() => handleClick(1)}
+		on:click={() => handleClick(-1)}
+		disabled={value <= 0}
 	>
-		<Icon icon="fluent:add-28-filled" width={iconSize} height={iconSize} />
-		<span class="sr-only">Increase</span>
+		<Icon icon="fluent:line-horizontal-1-28-filled" width={iconSize} height={iconSize} />
+		<span class="sr-only">Decrease</span>
 	</Button>
 	<div class="relative h-12 min-w-8">
 		{#key value}
@@ -67,10 +68,9 @@
 		variant="outline"
 		size="icon"
 		class="h-8 w-8 shrink-0 rounded-full"
-		on:click={() => handleClick(-1)}
-		disabled={value <= 0}
+		on:click={() => handleClick(1)}
 	>
-		<Icon icon="fluent:line-horizontal-1-28-filled" width={iconSize} height={iconSize} />
-		<span class="sr-only">Decrease</span>
+		<Icon icon="fluent:add-28-filled" width={iconSize} height={iconSize} />
+		<span class="sr-only">Increase</span>
 	</Button>
 </div>

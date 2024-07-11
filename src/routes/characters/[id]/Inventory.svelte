@@ -23,6 +23,6 @@
 		<div class="flex justify-center items-center">
 			<Icon icon="fluent:building-bank-28-regular" width="1.7rem" height="1.7rem" />
 		</div>
-		<span class="col-span-2"> Bank </span>
+		<span class="col-span-2 text-center"> Bank </span>
 	</a>
 </div>

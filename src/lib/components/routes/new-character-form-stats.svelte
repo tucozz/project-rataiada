@@ -13,7 +13,6 @@
 <div class="flex items-center justify-center space-x-8">
 	<Form.Field {form} {name}>
 		<Form.Control let:attrs>
-			<Form.Label>Max</Form.Label>
 			<VerticalCounter {...attrs} bind:value placeholder="0" />
 		</Form.Control>
 		<Form.FieldErrors />
