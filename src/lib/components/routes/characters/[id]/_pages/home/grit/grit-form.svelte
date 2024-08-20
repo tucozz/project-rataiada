@@ -10,7 +10,7 @@
 	import { zod } from 'sveltekit-superforms/adapters';
 	import { _gritSchema } from './grit-schema';
 	import { db, type Character } from '$lib/database';
-	import { Input } from 'flowbite-svelte';
+	import { VerticalCounter } from '$lib/components/ui/vertical-counter';
 
 	export let dataForm: SuperValidated<Infer<typeof _gritSchema>>;
 	export let character: Character;
@@ -52,8 +52,8 @@
 	<div class="flex items-center justify-center space-x-8">
 		<Form.Field {form} name="current">
 			<Form.Control let:attrs>
-				<Form.Label>Grit</Form.Label>
-				<Input {...attrs} type="number" bind:value={$formData.current} placeholder="0" />
+				<Form.Label class="hidden">Grit</Form.Label>
+				<VerticalCounter {...attrs} bind:value={$formData.current} placeholder="0" />
 			</Form.Control>
 			<Form.Description>This is your character's current grit.</Form.Description>
 			<Form.FieldErrors />
