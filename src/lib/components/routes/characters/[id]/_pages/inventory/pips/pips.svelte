@@ -19,8 +19,10 @@
 				<div class="flex items-center justify-center bg-gray-200">
 					<span class="block my-auto font-bold text-2xl">pips</span>
 				</div>
-				<div class="flex items-center justify-center col-span-2">
-					<span class="block my-auto text-xl">{character.inventory_pips}/250</span>
+				<div class="flex items-center justify-center gap-4 col-span-2">
+					<span class="text-xl">{character.inventory_pips}</span>
+					<span class="text-xl">/</span>
+					<span class="text-xl">250</span>
 				</div>
 			</div>
 		</Button>
