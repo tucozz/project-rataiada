@@ -21,6 +21,8 @@
 	};
 
 	let characters = liveQuery(() => db.characters.toArray());
+
+	const iconSize = '2rem';
 </script>
 
 <svelte:head>
@@ -39,8 +41,8 @@
 
 	<Drawer.Root>
 		<Drawer.Trigger asChild let:builder>
-			<Button builders={[builder]} size="icon" class="fixed right-0 bottom-0 m-8">
-				<Icon icon="fluent:add-28-regular" width="1.2rem" height="1.2rem" />
+			<Button builders={[builder]} size="icon" class="fixed right-0 bottom-0 m-8 size-12">
+				<Icon icon="fluent:add-28-regular" width={iconSize} height={iconSize} />
 			</Button>
 		</Drawer.Trigger>
 		<Drawer.Content class="max-h-[96%]">
