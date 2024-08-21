@@ -62,40 +62,40 @@
 				<div class="py-4">
 					<Separator />
 				</div>
-				<div class="flex justify-between pb-2">
-					<div class="flex gap-4">
+				<div class="flex justify-center pb-2">
+					<div class="flex gap-8">
 						{#each [1, 10] as amount}
-							<Button
-								variant="outline"
-								size="icon"
-								class="h-full w-8 shrink-0 rounded-full"
-								on:click={() => ($formData.current -= amount)}
-								disabled={$formData.current <= 0}
+							<div
+								class="max-w-fit flex items-center justify-center rounded-full bg-gray-100 border-[1px] flex-col"
 							>
-								<div class="flex flex-col gap-4 p-2">
-									<span class="text-sm text-center">{amount}</span>
-									<Icon icon="fluent:line-horizontal-1-28-filled" width={iconSize} height={iconSize} />
-									<span class="sr-only">Decrease {amount}</span>
-								</div>
-							</Button>
-						{/each}
-					</div>
-					<Separator orientation="vertical" class="h-12 my-auto" />
-					<div class="flex gap-2">
-						{#each [1, 10] as amount}
-							<Button
-								variant="outline"
-								size="icon"
-								class="h-full w-8 shrink-0 rounded-full"
-								on:click={() => ($formData.current += amount)}
-								disabled={$formData.current >= 250}
-							>
-								<div class="flex flex-col gap-4 p-2">
-									<span class="text-sm text-center">{amount}</span>
+								<Button
+									variant="outline"
+									size="icon"
+									class="h-8 w-8 shrink-0 rounded-full border-0 bg-transparent my-2"
+									on:click={() => ($formData.current += amount)}
+									disabled={$formData.current >= 250}
+								>
 									<Icon icon="fluent:add-28-filled" width={iconSize} height={iconSize} />
-									<span class="sr-only">Increase {amount}</span>
+									<span class="sr-only">Increase</span>
+								</Button>
+								<div class="bg-white border-y-[1px] px-4 py-4">
+									<span class="w-4 block text-center">{amount}</span>
 								</div>
-							</Button>
+								<Button
+									variant="outline"
+									size="icon"
+									class="h-8 w-8 shrink-0 rounded-full border-0 bg-transparent my-2"
+									on:click={() => ($formData.current -= amount)}
+									disabled={$formData.current <= 0}
+								>
+									<Icon
+										icon="fluent:line-horizontal-1-28-filled"
+										width={iconSize}
+										height={iconSize}
+									/>
+									<span class="sr-only">Decrease</span>
+								</Button>
+							</div>
 						{/each}
 					</div>
 				</div>

@@ -5,8 +5,11 @@
 	import { Input } from '$lib/components/ui/input';
 	import { fly } from 'svelte/transition';
 
-	type $$Props = HTMLInputAttributes;
+	type $$Props = HTMLInputAttributes & {
+		direction: 'vertical' | 'horizontal';
+	};
 
+	export let direction: 'vertical' | 'horizontal';
 	export let value: $$Props['value'] = undefined;
 
 	const transitionDistance = 16;
@@ -20,18 +23,24 @@
 	};
 </script>
 
-<div class="flex items-center justify-center space-x-2">
+<div
+	class="max-w-fit flex items-center justify-center rounded-full bg-gray-100 border-[1px]
+		{direction === 'vertical' ? 'flex-col' : 'flex-row-reverse'}"
+>
 	<Button
 		variant="outline"
 		size="icon"
-		class="h-8 w-8 shrink-0 rounded-full"
-		on:click={() => handleClick(-1)}
-		disabled={value <= 0}
+		class="h-8 w-8 shrink-0 rounded-full border-0 bg-transparent
+			{direction === 'vertical' ? 'my-2' : 'mx-2'}"
+		on:click={() => handleClick(1)}
 	>
-		<Icon icon="fluent:line-horizontal-1-28-filled" width={iconSize} height={iconSize} />
-		<span class="sr-only">Decrease</span>
+		<Icon icon="fluent:add-28-filled" width={iconSize} height={iconSize} />
+		<span class="sr-only">Increase</span>
 	</Button>
-	<div class="relative h-12 min-w-8">
+	<div
+		class="relative h-10 min-w-8 bg-white
+			{direction === 'vertical' ? 'border-y-[1px] px-6 py-6' : 'border-x-[1px] px-6'}"
+	>
 		{#key value}
 			<div
 				class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-12 text-center"
@@ -67,10 +76,12 @@
 	<Button
 		variant="outline"
 		size="icon"
-		class="h-8 w-8 shrink-0 rounded-full"
-		on:click={() => handleClick(1)}
+		class="h-8 w-8 shrink-0 rounded-full border-0 bg-transparent
+			{direction === 'vertical' ? 'my-2' : 'mx-2'}"
+		on:click={() => handleClick(-1)}
+		disabled={value <= 0}
 	>
-		<Icon icon="fluent:add-28-filled" width={iconSize} height={iconSize} />
-		<span class="sr-only">Increase</span>
+		<Icon icon="fluent:line-horizontal-1-28-filled" width={iconSize} height={iconSize} />
+		<span class="sr-only">Decrease</span>
 	</Button>
 </div>

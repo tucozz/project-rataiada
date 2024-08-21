@@ -62,7 +62,7 @@
 	<div class="flex items-center justify-center space-x-8">
 		<Form.Field {form} name="current">
 			<Form.Control let:attrs>
-				<Form.Label>EXP</Form.Label>
+				<Form.Label>Experience</Form.Label>
 				<Input {...attrs} type="number" bind:value={$formData.current} placeholder="0" />
 			</Form.Control>
 			<Form.Description>This is your character's current EXP.</Form.Description>

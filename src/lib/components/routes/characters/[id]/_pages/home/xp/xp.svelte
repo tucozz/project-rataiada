@@ -31,7 +31,7 @@
 	<Drawer.Content class="max-h-[80%]">
 		<div class="mx-auto w-full flex flex-col overflow-auto p-4 rounded-t-[10px]">
 			<Drawer.Header>
-				<Drawer.Title>grit</Drawer.Title>
+				<Drawer.Title>EXP</Drawer.Title>
 			</Drawer.Header>
 			<div class="p-4 pb-0">
 				<XPForm bind:this={xpForm} dataForm={data} {character} />

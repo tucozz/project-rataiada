@@ -8,6 +8,6 @@ export const load = async () => {
 	const pipsForm = await superValidate(zod(_pipsSchema));
 
 	return {
-		pipsForm,
+		pipsForm
 	};
 };

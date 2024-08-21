@@ -12,7 +12,7 @@
 	import { db, type Character } from '$lib/database';
 	import type { OnlyType } from './types';
 	import { Separator } from '$lib/components/ui/separator';
-	import { VerticalCounter } from '$lib/components/ui/vertical-counter';
+	import { Counter } from '$lib/components/ui/counter';
 
 	export let dataForm: SuperValidated<Infer<typeof _attributeSchema>>;
 	export let character: Character;
@@ -62,7 +62,7 @@
 		<Form.Field {form} name="max">
 			<Form.Control let:attrs>
 				<Form.Label>Max</Form.Label>
-				<VerticalCounter {...attrs} bind:value={$formData.max} placeholder="0" />
+				<Counter {...attrs} bind:value={$formData.max} placeholder="0" direction="vertical" />
 			</Form.Control>
 			<Form.FieldErrors />
 		</Form.Field>
@@ -70,7 +70,7 @@
 		<Form.Field {form} name="current">
 			<Form.Control let:attrs>
 				<Form.Label>Current</Form.Label>
-				<VerticalCounter {...attrs} bind:value={$formData.current} placeholder="0" />
+				<Counter {...attrs} bind:value={$formData.current} placeholder="0" direction="vertical" />
 			</Form.Control>
 			<Form.FieldErrors />
 		</Form.Field>

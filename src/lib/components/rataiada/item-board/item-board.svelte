@@ -23,7 +23,7 @@
 	};
 </script>
 
-<div class="board">
+<div class="board border rounded border-dashed border-b-0 pb-16">
 	<div class="flex justify-between border rounded mb-2">
 		<input class="w-full" placeholder="add new item..." bind:value={newItemContent} />
 		<div class="w-16 flex justify-center items-center">

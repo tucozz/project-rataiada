@@ -20,7 +20,7 @@
 					<span class="block my-auto font-bold text-2xl">pips</span>
 				</div>
 				<div class="flex items-center justify-center gap-4 col-span-2">
-					<span class="text-xl">{character.bank_pips}</span>
+					<span class="text-xl">{character.bank_pips.toLocaleString()}</span>
 				</div>
 			</div>
 		</Button>
