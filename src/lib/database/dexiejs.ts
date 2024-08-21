@@ -7,6 +7,7 @@ interface Character {
 	identity_birthsign: string;
 	identity_coat: string;
 	identity_look: string;
+	identity_portrait: string | null;
 	stats_level: number;
 	stats_experience: number;
 	stats_gritpoints: number;

@@ -41,6 +41,7 @@
 					identity_birthsign: form.data.identity_birthsign,
 					identity_coat: form.data.identity_coat,
 					identity_look: form.data.identity_look,
+					identity_portrait: null,
 					stats_level: 1,
 					stats_experience: 0,
 					stats_gritpoints: 1,

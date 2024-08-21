@@ -5,7 +5,7 @@
 	import { XP } from '$lib/components/routes/characters/[id]/_pages/home/xp';
 	import type { Character } from '$lib/database';
 	import type { load } from './+page';
-	import CharacterPortraitPlaceholder from '$lib/images/placeholders/character-portrait.png';
+	import { CharacterPortrait } from '$lib/components/routes/characters/[id]/_pages/home/character-portrait';
 
 	export let data: Awaited<ReturnType<typeof load>>;
 	export let character: Character;
@@ -14,11 +14,7 @@
 <div class="flex flex-col gap-16">
 	<CharacterIdentity data={data.identityForm} {character} />
 
-	<img
-		src={CharacterPortraitPlaceholder}
-		alt="character portrait"
-		class="w-full h-96 object-contain"
-	/>
+	<CharacterPortrait {character} />
 
 	<AttributesGroup data={data.attributeForm} {character} />
 
